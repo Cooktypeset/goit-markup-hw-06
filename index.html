@@ -437,38 +437,63 @@
             <use href="./images/icons.svg#icon-closebutton"></use>
           </svg>
         </button>
-        <div>
-          <p>Leave your contacts and we will call you back</p>
-          <form name="contact-form" autocomplete="0ff" novalidate>
-            <div>
-              <label for="user-name">Name</label>
-              <input id="user-name" type="text" name="user-name" />
+        <div class="forms-modal">
+          <p class="paragraph-form">
+            Leave your contacts and we will call you back
+          </p>
+          <form
+            class="contact-form"
+            name="contact-form"
+            autocomplete="0ff"
+            novalidate
+          >
+            <div class="form-field">
+              <label class="form-label" for="user-name">Name</label>
+              <input
+                class="form-input"
+                id="user-name"
+                type="text"
+                name="user-name"
+              />
             </div>
-            <div>
-              <label for="user-phone">Phone</label>
-              <input id="user-phone" type="tel" name="user-phone" />
+            <div class="form-field">
+              <label class="form-label" for="user-phone">Phone</label>
+              <input
+                class="form-input"
+                id="user-phone"
+                type="tel"
+                name="user-phone"
+              />
             </div>
-            <div>
-              <label for="email">Email</label>
-              <input id="email" type="text" name="email" />
+            <div class="form-field">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" id="email" type="text" name="email" />
             </div>
-            <div>
-              <label for="user-comment">Comment</label>
+            <div class="form-field">
+              <label class="form-label" for="user-comment">Comment</label>
               <textarea
+                class="form-input form-textarea"
                 name="user-comment"
                 id="user-comment"
                 placeholder="Text input"
               ></textarea>
             </div>
-            <div>
-              <input id="agreement" type="checkbox" name="agreement" />
-              <label for="agreement"
+            <div class="form-agreement-checkbox">
+              <input
+                class="visually-hidden"
+                id="agreement"
+                type="checkbox"
+                name="agreement"
+              />
+              <label class="agreement-form" for="agreement"
                 >I accept the terms and conditions of the
-                <a href="#">Privacy Policy</a>
+                <a class="link-form" href="#">Privacy Policy</a>
               </label>
             </div>
+            <button class="button-submit-form text-submit-form" type="submit">
+              Send
+            </button>
           </form>
-          <button type="submit">Send</button>
         </div>
       </div>
     </div>
