@@ -315,8 +315,12 @@ button {
   background: rgba(0, 0, 0, 0.5);
   transition: opacity 250ms, visibility 250ms;
 }
+
 .modal-close-window {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   left: 357px;
   top: 24px;
   max-width: 24px;
@@ -340,6 +344,11 @@ button {
   box-shadow: none;
 }
 
+.iconbutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .modal-window {
   position: absolute;
   overflow: hidden;
@@ -725,13 +734,21 @@ button {
 }
 .form-field {
   flex-basis: 100%;
-  position: relative;
 }
+
 .form-label {
   display: block;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
+  color: var(--icon-fill-color);
+  margin-bottom: 4px;
+}
+.form-labels {
+  display: block;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
   color: var(--icon-fill-color);
   margin-bottom: 4px;
 }
@@ -742,6 +759,15 @@ button {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-left: 35px;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-input:hover,
+.form-input:focus {
+  border-color: var(--accent-hoverfa-color);
+  outline: none;
 }
 
 .form-textarea {
@@ -753,14 +779,28 @@ button {
   padding-top: 8px;
 }
 
+.span-input-svg {
+  position: relative;
+}
+
 .form-icon {
   position: absolute;
-  top: 26px;
+  top: 50%;
   left: 16px;
+  transform: translateY(-50%);
   fill: var(--main-title-color);
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+.span-input-svg:hover .form-icon,
+.span-input-svg:focus-within .form-icon {
+  fill: var(--accent-hoverfa-color);
+}
+
 .container-checkbox {
   display: flex;
+  align-items: center;
   width: 360px;
   height: 16px;
 }
@@ -780,6 +820,7 @@ button {
 .agreement-form {
   display: flex;
   justify-content: center;
+  height: 16px;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.04em;
@@ -798,10 +839,14 @@ button {
   border: none;
   padding: 0 120px 24px 120px;
   margin-top: 24px;
+  transition-property: background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-submit-form:hover,
 .button-submit-form:focus {
   background-color: var(--accent-hoverfa-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 .text-submit-form {
   font-weight: 500;
@@ -819,13 +864,20 @@ button {
   height: 80px;
   margin-left: 80px;
 }
+
 .input-footer {
-  width: 264px;
+  position: relative;
+  width: 240px;
   height: 40px;
   background-color: var(--main-title-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
+}
+.input-footer:hover,
+.input-footer:focus {
+  border-color: var(--accent-hoverfa-color);
+  outline: none;
 }
 .place-input-footer {
   font-size: 12px;
@@ -834,13 +886,25 @@ button {
   color: rgba(255, 255, 255, 0.6);
   padding-left: 16px;
 }
+
 .butt-form-footer {
   position: relative;
   width: 165px;
   height: 40px;
   background-color: var(--ocean-color);
   border-radius: 4px;
+  transition-property: background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  margin-left: 24px;
 }
+.butt-form-footer:hover,
+.butt-form-footer:focus {
+  background-color: var(--accent-hoverfa-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
 .butttext-form {
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -849,7 +913,7 @@ button {
 }
 .butticon-footer {
   position: absolute;
-  top: 10px;
+  top: 8px;
   left: 117px;
   fill: var(--phon-white-color);
 }
